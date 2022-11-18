@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('d611a187de0e157a254aa9e6f0c8e890');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '주식본가',
+        description: '주식선물 리딩1위',
+        imageUrl:
+          '사진주소',
+        link: {
+          mobileWebUrl: 'http://naver.com',
+          webUrl: 'http://naver.com',
+        },
+      },
+      social: {
+        likeCount: 99999, //99999가 최대입니다
+        commentCount: 99999, //99999가 최대입니다
+        sharedCount: 99999, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '무료 리딩 상담신청',
+          link: {
+            mobileWebUrl: 'http://naver.com',
+            webUrl: 'http://naver.com',
+          },
+        },
+      ],
